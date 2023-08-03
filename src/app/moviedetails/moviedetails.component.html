@@ -1,0 +1,33 @@
+<div  class="container">
+  <div class="row py-5" >
+    <div class="col-md-4">
+      <img class="w-100" [src]="imgprefix +movDetails.poster_path" alt="">
+    </div>
+    <div class="col-md-8">
+      <h2 class="pt-4">{{movDetails.original_title}}</h2>
+
+      <h4 class="py-2 ps-4 text-secondary">{{movDetails.tagline}}</h4>
+      <div class="col-md-6 col-sm-12">
+        <div class=" d-flex align-items-center justify-content-around">
+
+          <div *ngFor="let x of movDetails.genres">
+            <p class="p-2  h5 mx-2  bg-info rounded-3" >{{x.name}}</p>
+
+          </div>
+        </div>
+      </div>
+
+
+      <ul class="mt-5 py-3">
+        <li class="my-3">Vote : {{movDetails.vote_average}}</li>
+        <li class="my-3">Vote count: {{movDetails.vote_count}}</li>
+        <li class="my-3">Popularity : {{movDetails.popularity}}</li>
+        <li class="my-3">Release date : {{movDetails.release_date}}</li>
+
+      </ul>
+      <p class="mb-3"> Overview : <br></p>
+      <span>{{movDetails.overview}}</span>
+    </div>
+  </div>
+
+</div>

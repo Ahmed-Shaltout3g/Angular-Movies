@@ -1,0 +1,62 @@
+<nav  class="navbar navbar-expand-lg fixed-top navbar-fixed-top ">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="home">Noxe</a>
+    <button (click)="change()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">
+          <a *ngIf="isLogin" class="nav-link " routerLinkActive="text-warning" aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin" routerLinkActive="text-warning"  class="nav-link" routerLink="movies">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin" class="nav-link" routerLinkActive="text-warning" routerLink="tvShow">Tv show</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="isLogin" class="nav-link" routerLinkActive="text-warning" routerLink="people">People</a>
+        </li>
+        <li  class="nav-item">
+          <a *ngIf="isLogin" class="nav-link" routerLinkActive="text-warning" routerLink="about">About</a>
+        </li>
+
+      </ul>
+
+
+
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+
+        <li class="nav-item mx-3 py-1   d-flex justify-content-center align-items-center  ">
+          <a  class="nav-link" target="_blank" href="https://www.facebook.com/ahmedshaltout3g/"><i class="fa-brands fa-facebook px-2"></i></a>
+          <a  class="nav-link" target="_blank" href="https://www.linkedin.com/in/ahmed-shaltout-015b85252/"><i class="fa-brands fa-linkedin"></i></a>
+          <a  class="nav-link" target="_blank" href="https://www.instagram.com/ahmed_shaltout_3g/"><i class="fa-brands fa-instagram px-2"></i></a>
+          <a  class="nav-link" target="_blank" href="https://github.com/Ahmed-Shaltout3g"><i class="fa-brands fa-github"></i></a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <a *ngIf="isLogin" class="nav-link active mt-1" routerLink="home">Hello <span class="name">{{userData.name}}</span></a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!isLogin" class="nav-link active mt-1" routerLinkActive="text-warning" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!isLogin" class="nav-link mt-1" routerLinkActive="text-warning" routerLink="register">Register</a>
+        </li>
+        <li class="nav-item">
+          <!-- <a *ngIf="isLogin" class="nav-link" routerLink="people">Logout</a> -->
+        <span (click)= "signOut()" *ngIf="isLogin"  class="nav-link logout mt-1">LogOut</span>
+        </li>
+      </ul>
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+
+

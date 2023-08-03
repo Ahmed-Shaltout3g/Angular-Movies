@@ -1,0 +1,40 @@
+.container-fluid
+{
+  margin-top: 60px;
+}
+
+
+
+
+.fix-dnt
+{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+}
+
+
+.options
+{
+    position: fixed;
+    top: 200px;
+    left: 0px;
+}
+
+.items-color
+{
+    padding-top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #f19a02;
+    cursor: pointer;
+}
+
+
+.options i
+{
+    cursor: pointer;
+}
+
+

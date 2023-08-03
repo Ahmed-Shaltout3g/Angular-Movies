@@ -1,0 +1,85 @@
+<!--<h2 class="py-2">Log In</h2>
+
+ <div class="w-75 m-auto p-2">
+
+  <div *ngIf="errorMassage" class="alert alert-danger">{{errorMassage}}</div>
+  <form (ngSubmit)="logIn(loginForm)" [formGroup]="loginForm" >
+
+
+    <label for="email" class="pt-3">Email</label>
+    <input id="email" formControlName="email" type="email" class="form-control">
+    <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+      <p *ngIf="loginForm.get('email')?.getError('required')" class="alert text-danger py-1 ">Your email is required</p>
+      <p  *ngIf="loginForm.get('email')?.getError('email')" class="alert text-danger py-1 ">Your email is invalid </p>
+    </div>
+
+
+
+    <label for="password" class="pt-3">Password</label>
+    <input formControlName="password" type="password" class="form-control">
+    <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+      <p *ngIf="loginForm.get('password')?.getError('required')" class="alert text-danger py-1 ">Your password is required</p>
+      <p  *ngIf="loginForm.get('password')?.getError('pattern')" class="alert text-danger py-1 ">Your password should be more than 8 Letter </p>
+    </div>
+
+
+    <button [disabled]="loginForm.invalid" class="btn mt-3 bg-info">
+      <span class="bg-info" *ngIf="isLoading"><i class="fa-solid fa-spinner fa-spin bg-info"></i></span>
+      <span class="bg-info" *ngIf="!isLoading">Log In</span>
+
+      </button>
+  </form>
+
+
+
+</div> -->
+<!-- {{registerForm.get('last_name')?.getError('minlength') | json}} -->
+
+
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><a routerLink="login">Sign In</a></label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><a routerLink="/register">Sign Up</a></label>
+		<div class="login-form">
+      <form (ngSubmit)="logIn(loginForm)" [formGroup]="loginForm" >
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Email</label>
+					<input id="user" formControlName="email" type="email"  class="input">
+          <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+            <p *ngIf="loginForm.get('email')?.getError('required')" class="alert text-danger py-1 ">Your email is required</p>
+            <p  *ngIf="loginForm.get('email')?.getError('email')" class="alert text-danger py-1 ">Your email is invalid </p>
+          </div>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" formControlName="password" type="password" class="input" data-type="password">
+          <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+            <p *ngIf="loginForm.get('password')?.getError('required')" class="alert text-danger py-1 ">Your password is required</p>
+            <p  *ngIf="loginForm.get('password')?.getError('pattern')" class="alert text-danger py-1 ">Your password should be more than 8 Letter </p>
+          </div>
+        </div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+          <button [disabled]="loginForm.invalid" class="button ">
+            <span class="" *ngIf="isLoading"><i class="fa-solid fa-spinner fa-spin fs-3"></i></span>
+            <span class="" *ngIf="!isLoading">Sign In</span>
+
+            </button>
+            <div *ngIf="errorMassage" class="alert alert-danger border-0 text-danger bg-transparent">{{errorMassage}}</div>
+				</div>
+				<!-- <div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div> -->
+
+			</div>
+    </form>
+
+
+
+	</div>
+</div>

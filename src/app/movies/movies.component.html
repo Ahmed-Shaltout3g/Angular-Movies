@@ -1,0 +1,55 @@
+<div class="container">
+  <div *ngIf="movielist.length>0;else loading "></div>
+<div class="row gy-3 justify-content-center">
+
+
+
+<div class="my-5 py-3">
+  <input type="text" [(ngModel)]="term"  placeholder="Search ...." class="form-control text-black ">
+</div>
+
+
+
+    <div  *ngFor="let movie of movielist|search:term" class="col-md-2 ">
+      <div id="a"  class="movies position-relative overflow-hidden">
+        <div class="rate">
+          <div class="d-flex justify-content-center align-items-start">
+            <h3  class="bg-transparent">{{movie.vote_average|number: '1.0-1'}}</h3>
+            <div class="p-2 bg-transparent d-flex justify-content-center align-items-center">
+              <i class="fa-solid fa-star text-warning"></i>
+            </div>
+          </div>
+        </div>
+        <a  [routerLink]="['/moviedetails',movie.id]">
+          <img class="w-100" [src]="imgprefix + movie.poster_path" alt="">
+
+        </a>
+
+      </div>
+      <a  [routerLink]="['/moviedetails',movie.id]">
+        <h3 class="h6 mt-2 mb-3 ">{{movie.title}}</h3>
+      </a>
+
+    </div>
+
+
+
+  </div>
+
+
+
+  <nav aria-label="...">
+    <ul class="pagination pagination-sm d-flex justify-content-center mt-5">
+      <li  class="page-item active cursor d-flex justify-content-center"  aria-current="page">
+        <span *ngFor="let page of pages" class="page-link" (click)="testPage(page)">{{page}}</span>
+      </li>
+
+    </ul>
+  </nav>
+
+
+  <ng-template #loading>
+    <div class="container vh-100 d-flex justify-content-center align-items-center">  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+       </ng-template>
+
+</div>

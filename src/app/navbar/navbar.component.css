@@ -1,0 +1,36 @@
+.logout
+{
+  cursor: pointer;
+}
+
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index:999999999999999999;
+}
+
+.navbar
+{
+    transition: all 2s , padding 2s ;
+}
+
+
+.navbar-fixed-top.scrolled {
+  background-color: rgb(48, 54, 116) !important;
+  padding: 10px 50px;
+  transition: background-color 2s,padding 2s ;
+}
+
+.navbar-fixed-top.scrolled .nav-link {
+  color:#555;
+}
+
+
+.change
+{
+  background-color: rgb(48, 54, 116) !important;
+
+}

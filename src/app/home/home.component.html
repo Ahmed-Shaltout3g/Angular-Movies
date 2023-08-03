@@ -1,0 +1,146 @@
+<owl-carousel-o [options]="customOptions" #owlCar class="carousel-wrapper  ">
+
+  <ng-container *ngFor="let movie of trendingMovies" class="bg-white ">
+    <ng-template carouselSlide [id]="movie.id">
+      <div class="h"class="bg-black position-relative overflow-hidden ">
+        <a id="photoslid"   [routerLink]="['/moviedetails',movie.id]">
+          <img  [ngClass]='' [src]="imgprefix + movie.poster_path" [alt]="movie.alt" [title]="movie.title">
+        </a>
+        <a [routerLink]="['/moviedetails',movie.id]">
+          <div class="titles">
+            <h3  class="bg-transparent">{{movie.title}}</h3>
+            <div class="d-flex">
+              <h3  class="bg-transparent">{{movie.vote_average|number: '1.0-1'}}</h3>
+              <div class="p-1 bg-transparent">
+                <i class="fa-solid fa-star text-warning"></i>
+              </div>
+            </div>
+            <p>{{movie.overview}}</p>
+          </div>
+        </a>
+      </div>
+    </ng-template>
+  </ng-container>
+
+</owl-carousel-o>
+
+
+
+
+
+<div class="container">
+  <div  *ngIf="trendingMovies.length>0 ; else loading">
+    <div  class="row gy-3  ">
+      <div class="col-md-4 d-flex align-items-center">
+        <div>
+          <h2 class="sub-titles">Trending<br>
+            Movies <br>
+          To Watch Right Now </h2>
+          <p class="text-secondary sub-titles-parag ">Most Watched Movies By Day</p>
+        </div>
+
+
+      </div>
+
+
+
+        <div  *ngFor="let movie of trendingMovies" class="col-md-2 ">
+          <div id="a"  class="movies position-relative overflow-hidden">
+            <div class="rate">
+              <div class="d-flex justify-content-center align-items-start">
+                <h3  class="bg-transparent">{{movie.vote_average|number: '1.0-1'}}</h3>
+                <div class="p-2 bg-transparent">
+                  <i class="fa-solid fa-star text-warning"></i>
+                </div>
+              </div>
+            </div>
+            <a  [routerLink]="['/moviedetails',movie.id]">
+              <img class="w-100" [src]="imgprefix + movie.poster_path" alt="">
+
+            </a>
+
+          </div>
+          <a  [routerLink]="['/moviedetails',movie.id]">
+            <h3 class="h6 mt-2 mb-3 ">{{movie.title}}</h3>
+          </a>
+
+        </div>
+      </div>
+
+
+    <!-- +++++++++++++++++++++++++++++++      tv -->
+      <div class="row gy-3 mt-lg-5   ">
+        <div class="col-md-4 d-flex align-items-center">
+          <div>
+            <h2 class="sub-titles mt-5">Trending<br>
+              TV <br>
+            To Watch Right Now </h2>
+            <p class="text-secondary sub-titles-parag ">Most Watched Movies By Days</p>
+          </div>
+
+
+        </div>
+
+
+
+
+
+
+
+          <div  *ngFor="let tv of trendingTv" class="col-md-2 ">
+            <div id="a"  class="movies position-relative overflow-hidden">
+              <div class="rate">
+                <div class="d-flex justify-content-center align-items-start">
+                  <h3  class="bg-transparent">{{tv.vote_average|number: '1.0-1'}}</h3>
+                  <div class="p-2 bg-transparent">
+                    <i class="fa-solid fa-star text-warning"></i>
+                  </div>
+                </div>
+              </div>
+              <a  [routerLink]="['/tvDetails',tv.id]">
+                <img class="w-100" [src]="imgprefix + tv.poster_path" alt="">
+
+              </a>
+
+            </div>
+            <a  [routerLink]="['/tvDetails',tv.id]">
+              <h3 class="h6 mt-2 mb-3 ">{{tv.name}}</h3>
+            </a>
+
+          </div>
+        </div>
+
+
+
+    <!-- +++++++++++++++++++++++++++++++      people -->
+      <div class="row gy-3 mt-lg-5 ">
+        <div class="col-md-4 d-flex align-items-center">
+          <div>
+            <h2 class="sub-titles mt-5">Trending<br>
+              people <br>
+            To Watch Right Now </h2>
+            <p class="text-secondary sub-titles-parag ">Most Watched Movies By Days</p>
+          </div>
+
+
+        </div>
+
+
+
+          <div *ngFor="let person of trendingPeople" class="col-md-2">
+            <div class="movies">
+            <a  [routerLink]="['/peopledetails',person.id]">
+              <img class="w-100" [src]="person.profile_path" alt="">
+              <h3 class="h6 mt-2 mb-3">{{person.name}}</h3>
+            </a>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+        <ng-template #loading>
+        <div class="container vh-100 d-flex justify-content-center align-items-center">  <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+           </ng-template>
+
+</div>

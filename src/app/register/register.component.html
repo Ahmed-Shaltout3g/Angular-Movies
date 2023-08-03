@@ -1,0 +1,85 @@
+
+<div class="login-wrap">
+	<div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" ><label for="tab-1" class="tab"><a routerLink="/login">Sign In</a></label>
+
+    <input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab"><a routerLink="/register">Sign Up</a></label>
+
+  <div class="login-form">
+
+  <form (ngSubmit)="submitRegister(registerForm)" [formGroup]="registerForm">
+
+  <div class="sign-up-htm">
+  <div class="group">
+    <label for="name" class="label">Username</label>
+    <input formControlName="name" type="text" class="input">
+    <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched">
+      <p *ngIf="registerForm.get('name')?.getError('required')" class="alert text-danger py-1 ">Your first name is required</p>
+      <p  *ngIf="registerForm.get('name')?.getError('minlength')" class="alert text-danger py-1 ">Your first name should be more than 2 Letter </p>
+      <p *ngIf="registerForm.get('name')?.getError('maxlength')" class="alert text-danger py-1 ">Your first name should be less than 50 Letter </p>
+    </div>
+  </div>
+  <div class="group">
+     <label for="password" class="label">Password</label>
+    <input formControlName="password" type="password" class="input" >
+    <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched">
+      <p *ngIf="registerForm.get('password')?.getError('required')" class="alert text-danger py-1 ">Your password is required</p>
+      <p  *ngIf="registerForm.get('password')?.getError('pattern')" class="alert text-danger py-1 ">Your password should be more than 8 Letter </p>
+    </div>
+
+  </div>
+  <div class="group">
+    <label for="rePassword" class="label">Repeat password</label>
+    <input formControlName="rePassword" type="password" class="input" >
+    <div *ngIf="registerForm.get('rePassword')?.errors && registerForm.get('rePassword')?.touched">
+      <p *ngIf="registerForm.get('rePassword')?.getError('required')" class="alert text-danger py-1 ">Your repeat password is required</p>
+      <p *ngIf="registerForm.get('rePassword')?.getError('passwordMatch')" class="alert text-danger py-1 ">Your repeat Password must matched to password</p>
+    </div>
+  </div>
+  <div class="group">
+    <label for="email">Email Address</label>
+    <input id="email" formControlName="email" type="email" class="input" >
+    <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched">
+      <p *ngIf="registerForm.get('email')?.getError('required')" class="alert text-danger py-1 ">Your email is required</p>
+      <p  *ngIf="registerForm.get('email')?.getError('email')" class="alert text-danger py-1 ">Your email is invalid </p>
+    </div>
+  </div>
+  <div class="group">
+    <label for="phone" class="label">Phone</label>
+   <input type="tel"  id="phone"  formControlName="phone" class="input">
+          <div class="text-err" *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched">
+            <p *ngIf="registerForm.get('phone')?.getError('required')" class="alert text-danger py-1 ">Your phone is Required</p>
+            <p *ngIf="registerForm.get('phone')?.getError('pattern')" class="alert text-danger py-1 ">This is not mobile number</p>
+          </div>
+  </div>
+  <div class="group">
+
+    <button type="submit" [disabled]="registerForm.invalid" class="button">
+      <span  *ngIf="isLoading"><i class="fa-solid fa-spinner fa-spin fs-3"></i></span>
+      <span  *ngIf="!isLoading">Sign Up</span>
+ </button>
+    </div>
+  <div *ngIf="errorMassage" class="alert alert-danger border-0 text-danger bg-transparent">{{errorMassage}}</div>
+  <div class="hr"></div>
+  <div class="foot-lnk">
+    <label for="tab-1"><a routerLink="/login">Already Member?</a></label>
+  </div>
+  </div>
+</form>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row py-5" >
+    <div class="col-md-4">
+      <img class="w-100" [src]="peopleList.profile_path" alt="profile_path">
+    </div>
+    <div class="col-md-8">
+      <h2 class="pt-4">{{peopleList.name}}</h2>
+
+      <h4 class="py-2 ps-4 text-secondary">{{peopleList.known_for_department}}</h4>
+      <div class="px-md-3 d-flex">
+        <p class="p-2 h5 mx-3 bg-info rounded-3" *ngFor="let x of nameKnow">{{x}}</p>
+      </div>
+
+      <ul class="mt-5 py-3">
+        <li class="my-3">Birthday : {{peopleList.birthday}}</li>
+        <li class="my-3">Place of birth : {{peopleList.place_of_birth}}</li>
+        <li class="my-3">Popularity : {{peopleList.popularity}}</li>
+
+      </ul>
+      <p class="mb-3"> Biography : <br></p>
+      <span>{{peopleList.biography}}</span>
+    </div>
+  </div>
+
+</div>

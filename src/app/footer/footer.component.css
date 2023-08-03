@@ -1,0 +1,36 @@
+*
+{
+  background-color:rgb(48, 54, 116) !important;
+}
+
+.container
+{
+  width: 60%;
+}
+
+.container-fliud
+{
+  padding-top: 70px;
+
+  padding-bottom: 50px;
+}
+
+a
+{
+  margin: 10px;
+
+}
+i
+{
+  font-size: 20px;
+}
+i:hover
+{
+  color: black !important;
+}
+
+
+a:hover
+{
+  color: black!important;
+}

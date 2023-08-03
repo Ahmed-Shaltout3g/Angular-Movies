@@ -1,0 +1,46 @@
+<div *ngIf="isLogin" class="container-fliud mt-5   ">
+  <div class="container-md ">
+    <div class="row ">
+      <div class="col-md-6">
+        <div>
+          <h1 >Noxe</h1>
+          <h2 >made by : Ahmed shaltout</h2>
+        </div>
+      <div class="d-flex">
+        <a  class="nav-link" target="_blank" href="https://www.facebook.com/ahmedshaltout3g/"><i class="fa-brands fa-facebook px-2"></i></a>
+        <a  class="nav-link" target="_blank" href="https://www.linkedin.com/in/ahmed-shaltout-015b85252/"><i class="fa-brands fa-linkedin"></i></a>
+        <a  class="nav-link" target="_blank" href="https://www.instagram.com/ahmed_shaltout_3g/"><i class="fa-brands fa-instagram px-2"></i></a>
+        <a  class="nav-link" target="_blank" href="https://github.com/Ahmed-Shaltout3g"><i class="fa-brands fa-github"></i></a>
+
+      </div>
+      </div>
+      <div class="col-md-3">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link " aria-current="page" routerLink="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin"  class="nav-link" routerLink="movies">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link" routerLink="tvShow">Tv show</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="isLogin" class="nav-link" routerLink="people">People</a>
+          </li>
+          <li  class="nav-item">
+            <a *ngIf="isLogin" class="nav-link" routerLink="about">About</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <div>
+          <h1 >Hello</h1>
+          <h2 class="ps-2 bg-info">{{userData.name}}</h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
